@@ -1,7 +1,7 @@
 {
   "name": "VidFetch",
   "tagline": "Free Facebook Video Downloader",
-  "url": "https://devr77.github.io/facebook-video-download",
+  "url": "https://download.toolsbase.org",
   "apiUrl": "https://app.toolsbase.org",
   "contactEmail": "info@toolsbase.org",
   "twitter": "",
@@ -10,5 +10,5 @@
   "mixpanelSessionReplayPercent": 100,
   "googleSiteVerification": "",
   "bingSiteVerification": "",
-  "customDomain": ""
+  "customDomain": "download.toolsbase.org"
 }
