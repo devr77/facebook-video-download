@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1a5ce6"/>
+      <stop offset="1" stop-color="#3b2fd1"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1080" cy="90" r="220" fill="#fff" opacity=".06"/>
+  <circle cx="120" cy="600" r="180" fill="#fff" opacity=".06"/>
+  <g transform="translate(96 150)">
+    <rect width="96" height="96" rx="24" fill="#fff"/>
+    <path d="M48 22v35m0 0-14-14m14 14 14-14M28 72h40" fill="none" stroke="#1a5ce6" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="124" y="66" font-family="Helvetica, Arial, sans-serif" font-size="52" font-weight="800" fill="#fff">VidFetch</text>
+  </g>
+  <text x="96" y="360" font-family="Helvetica, Arial, sans-serif" font-size="68" font-weight="800" fill="#fff">Facebook Video Downloader</text>
+  <text x="96" y="430" font-family="Helvetica, Arial, sans-serif" font-size="34" fill="#fff" opacity=".9">Download FB videos &amp; Reels in HD. Free, no sign-up.</text>
+  <g transform="translate(96 480)">
+    <rect width="660" height="72" rx="14" fill="#fff"/>
+    <text x="28" y="46" font-family="Helvetica, Arial, sans-serif" font-size="26" fill="#8a93a6">https://www.facebook.com/watch?v=…</text>
+    <rect x="500" y="10" width="150" height="52" rx="10" fill="#1a5ce6"/>
+    <text x="575" y="44" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="24" font-weight="700" fill="#fff">Download</text>
+  </g>
+</svg>

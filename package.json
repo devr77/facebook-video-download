@@ -1,0 +1,10 @@
+{
+  "name": "vidfetch",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "dev": "SITE_URL=http://localhost:8000 API_URL=http://localhost:3000 node scripts/build.mjs && node scripts/serve.mjs",
+    "icons": "bash scripts/icons.sh"
+  }
+}

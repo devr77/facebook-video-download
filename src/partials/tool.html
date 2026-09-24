@@ -1,0 +1,18 @@
+<form class="tool" data-tool="url" data-api="{{apiUrl}}" novalidate>
+  <label class="visually-hidden" for="video-url">Facebook video URL</label>
+  <div class="tool-row">
+    <div class="input-wrap">
+      <svg class="input-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1.5 1.5M14 11a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07l1.5-1.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      <input id="video-url" name="url" type="url" inputmode="url" autocomplete="off" spellcheck="false"
+             placeholder="Paste Facebook video link here" required>
+      <button class="paste-btn" type="button" data-paste>Paste</button>
+    </div>
+    <button class="btn btn-primary btn-lg" type="submit">
+      <span class="btn-label">Download</span>
+      <span class="spinner" aria-hidden="true"></span>
+    </button>
+  </div>
+  <p class="tool-hint">Works with videos, Reels, Watch and fb.watch links. By using {{name}} you accept our <a href="{{base}}/terms/">terms</a>.</p>
+  <div class="tool-status" role="status" aria-live="polite"></div>
+  <div class="result" hidden></div>
+</form>

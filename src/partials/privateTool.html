@@ -1,0 +1,14 @@
+<form class="tool" data-tool="source" data-api="{{apiUrl}}" novalidate>
+  <label class="field-label" for="page-source">Paste the page source of the private video</label>
+  <textarea id="page-source" name="source" rows="6" spellcheck="false" required
+            placeholder="Press Ctrl+U (or ⌥⌘U on Mac) on the Facebook video page, select all, copy, and paste it here…"></textarea>
+  <div class="tool-actions">
+    <button class="btn btn-primary btn-lg" type="submit">
+      <span class="btn-label">Get Download Links</span>
+      <span class="spinner" aria-hidden="true"></span>
+    </button>
+  </div>
+  <p class="tool-hint">The page source is processed in your browser only. It is never uploaded to our servers.</p>
+  <div class="tool-status" role="status" aria-live="polite"></div>
+  <div class="result" hidden></div>
+</form>

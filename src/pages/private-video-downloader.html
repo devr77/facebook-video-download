@@ -1,0 +1,72 @@
+<!--
+{
+  "path": "/private-video-downloader/",
+  "title": "Facebook Private Video Downloader – Download Private FB Videos",
+  "description": "Download private Facebook videos from groups and profiles you have access to. Paste the page source and get HD and SD download links, processed in your browser.",
+  "h1": "Facebook Private Video Downloader",
+  "breadcrumb": "Private Video Downloader",
+  "nav": 3,
+  "navLabel": "Private Video",
+  "priority": 0.8,
+  "app": true,
+  "howto": {
+    "name": "How to download a private Facebook video",
+    "steps": [
+      "Open the video. Log in to Facebook on a computer and open the private video you want to save.",
+      "View the page source. Press Ctrl+U on Windows or Option+Command+U on Mac to open the page source.",
+      "Copy the source. Press Ctrl+A then Ctrl+C (Cmd+A, Cmd+C on Mac) to copy all of the source code.",
+      "Paste and download. Paste it into the box on this page, click Get Download Links, then choose HD or SD."
+    ]
+  },
+  "faq": [
+    { "q": "Why can't private videos be downloaded from a link?", "a": "Private videos are only visible to logged-in users who have permission, so our server can't open them. The page source from your own browser already contains the video links, so we read those instead." },
+    { "q": "Is it safe to paste my page source?", "a": "Yes. The page source is processed entirely in your browser with JavaScript and never sent to our servers. Close the tab afterwards to clear it." },
+    { "q": "Can I do this on a phone?", "a": "Viewing the page source is hard on mobile browsers. For the most reliable results, use Chrome, Edge or Firefox on a computer." },
+    { "q": "It says no video was found. What should I do?", "a": "Make sure you opened the video page itself (not the news feed), let the video start playing, then copy the full page source again. Videos embedded in some group posts may need to be opened in a new tab first." }
+  ]
+}
+-->
+<section class="hero">
+  <div class="container hero-inner">
+    <h1>Facebook Private Video Downloader</h1>
+    <p class="hero-sub">Download videos you can see on Facebook, including from private groups, private profiles and restricted posts.</p>
+    {{privateTool}}
+  </div>
+</section>
+
+<section class="section" aria-labelledby="how-title">
+  <div class="container">
+    <h2 id="how-title" class="section-title">How to download private Facebook videos</h2>
+    <ol class="steps steps-4">
+      <li class="step">
+        <span class="step-num" aria-hidden="true">1</span>
+        <h3>Open the video</h3>
+        <p>Log in to Facebook on a computer and open the private video's page.</p>
+      </li>
+      <li class="step">
+        <span class="step-num" aria-hidden="true">2</span>
+        <h3>View page source</h3>
+        <p>Press <kbd>Ctrl</kbd>+<kbd>U</kbd> (Windows) or <kbd>⌥</kbd>+<kbd>⌘</kbd>+<kbd>U</kbd> (Mac).</p>
+      </li>
+      <li class="step">
+        <span class="step-num" aria-hidden="true">3</span>
+        <h3>Copy everything</h3>
+        <p>Press <kbd>Ctrl</kbd>+<kbd>A</kbd> then <kbd>Ctrl</kbd>+<kbd>C</kbd> to copy all the source code.</p>
+      </li>
+      <li class="step">
+        <span class="step-num" aria-hidden="true">4</span>
+        <h3>Paste &amp; download</h3>
+        <p>Paste into the box above and click <strong>Get Download Links</strong>.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="section section-alt" aria-labelledby="faq-title">
+  <div class="container narrow">
+    <h2 id="faq-title" class="section-title">Private video FAQ</h2>
+    {{faq}}
+  </div>
+</section>
+
+{{moreTools}}
