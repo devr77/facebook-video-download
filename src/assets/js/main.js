@@ -158,7 +158,7 @@ function renderResult(container, video, api, mode) {
   for (const link of video.links) {
     const a = document.createElement('a');
     a.className = `btn ${link.quality === 'HD' ? 'btn-success' : 'btn-primary'}`;
-    a.href = `${api}/v1/downloader/download?url=${encodeURIComponent(link.url)}&name=${encodeURIComponent(video.title)}`;
+    a.href = `${api}/v1/downloader/download?url=${encodeURIComponent(link.url)}&name=${encodeURIComponent(fileName(video.title))}`;
     a.rel = 'nofollow';
     a.innerHTML = `${ICON_DOWNLOAD}<span>Download ${link.quality}</span>`;
     a.addEventListener('click', () => track('video_download_clicked', { quality: link.quality.toLowerCase(), download_method: 'direct', source_mode: mode }));
@@ -186,6 +186,20 @@ function renderResult(container, video, api, mode) {
   container.replaceChildren(fragment);
   container.hidden = false;
   container.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+// Facebook titles are often the whole post (paragraphs, emoji, hashtags); the API caps `name` at 200 chars.
+function fileName(title, max = 80) {
+  const clean = String(title || '')
+    .split('\n')[0]
+    .replace(/#\S+/g, '')
+    .replace(/[\\/:*?"<>|\p{Extended_Pictographic}\uFE0F\u200D]/gu, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+  const chars = Array.from(clean); // count code points so a cut never splits a character
+  if (chars.length <= max) return clean || 'facebook-video';
+  const cut = chars.slice(0, max).join('');
+  return cut.slice(0, cut.lastIndexOf(' ') > max / 2 ? cut.lastIndexOf(' ') : cut.length).replace(/[\s.,;:!-]+$/, '');
 }
 
 function escapeHtml(s) {
