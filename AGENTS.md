@@ -26,6 +26,8 @@ This project uses **Mixpanel** for product analytics. Do not introduce other ana
 
 - `mixpanel.init(token, { debug, track_pageview: false, persistence: 'localStorage' })`, then `mixpanel.register({ platform: 'web' })`, then `mixpanel.track_pageview()` (page view is sent after registration so it carries super properties)
 - `debug` is on automatically when the build's `SITE_URL` is `http://localhost…` (i.e. `npm run dev`)
+- **Autocapture** (`autocapture: { pageview: false, page_leave: true }`): `$mp_click`, `$mp_rage_click`, `$mp_dead_click`, `$mp_scroll`, `$mp_submit`, `$mp_input_change` (no values), `$mp_page_leave`. Don't add manual events that duplicate these
+- **Session Replay** at `site.config.json` → `mixpanelSessionReplayPercent` (default 100) plus **heatmaps** (`record_heatmap_data`). Inputs are masked in recordings by default; add class `mp-block` to any element that must never be recorded
 - Feature code calls the `track()` helper in `src/assets/js/main.js`, which wraps `window.mixpanel.track` in a try/catch so analytics can never break the tool
 
 **Do not** initialize Mixpanel anywhere else or create additional instances.

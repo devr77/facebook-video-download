@@ -7,6 +7,7 @@
   "twitter": "",
   "googleAnalyticsId": "",
   "mixpanelToken": "965c0f8bd5b9adf2d2d8f8b7c64c1305",
+  "mixpanelSessionReplayPercent": 100,
   "googleSiteVerification": "",
   "bingSiteVerification": "",
   "customDomain": ""
