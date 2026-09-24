@@ -1,4 +1,8 @@
-name: Deploy site to GitHub Pages
+name: Deploy site
+
+# The same site is published twice:
+#   - GitHub Pages     → https://devr77.github.io/facebook-video-download/
+#   - Cloudflare Workers (static assets) → https://download.toolsbase.org/ (canonical, from site.config.json `url`)
 
 on:
   push:
@@ -23,6 +27,8 @@ jobs:
         with:
           node-version: 22
       - run: node scripts/build.mjs
+        env:
+          DEPLOY_URL: https://devr77.github.io/facebook-video-download
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
@@ -36,3 +42,16 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
+
+  cloudflare:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node scripts/build.mjs
+      - run: npx --yes wrangler@4 deploy --config wrangler.site.jsonc
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}

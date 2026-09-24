@@ -1,0 +1,12 @@
+// Static site on Cloudflare Workers (assets only, no script) → https://download.toolsbase.org
+// Deployed by .github/workflows/deploy.yml; build first with `npm run build`.
+{
+  "name": "vidfetch-site",
+  "compatibility_date": "2026-09-21",
+  "assets": {
+    "directory": "./dist",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  },
+  "routes": [{ "pattern": "download.toolsbase.org", "custom_domain": true }]
+}

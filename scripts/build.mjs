@@ -14,8 +14,11 @@ if (process.env.SITE_URL) config.url = process.env.SITE_URL;
 if (process.env.API_URL) config.apiUrl = process.env.API_URL;
 if (process.env.MIXPANEL_TOKEN) config.mixpanelToken = process.env.MIXPANEL_TOKEN;
 
+// `url` is the canonical address (canonical tags, sitemap, OG). DEPLOY_URL is where this copy is hosted,
+// so the same site can also be served from a sub-path such as https://user.github.io/repo.
 const siteUrl = config.url.replace(/\/$/, '');
-const base = new URL(siteUrl).pathname.replace(/\/$/, '');
+const deployUrl = (process.env.DEPLOY_URL || siteUrl).replace(/\/$/, '');
+const base = new URL(deployUrl).pathname.replace(/\/$/, '');
 const today = new Date().toISOString().slice(0, 10);
 
 const read = (...parts) => readFileSync(join(...parts), 'utf8');
@@ -244,7 +247,7 @@ function build() {
   if (!existsSync(join(dist, 'assets/img/og-image.png'))) {
     console.warn('  ! assets/img/og-image.png missing — run `npm run icons`');
   }
-  console.log(`\nBuilt ${pages.length} pages for ${siteUrl}`);
+  console.log(`\nBuilt ${pages.length} pages for ${deployUrl} (canonical ${siteUrl})`);
 }
 
 build();
