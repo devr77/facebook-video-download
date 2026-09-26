@@ -1,8 +1,9 @@
 name: Deploy site
 
 # The same site is published twice:
-#   - GitHub Pages     → https://devr77.github.io/facebook-video-download/
-#   - Cloudflare Workers (static assets) → https://download.toolsbase.org/ (canonical, from site.config.json `url`)
+#   - GitHub Pages     → https://devr77.github.io/facebook-video-download/ (SITE_URL override)
+#   - Cloudflare Workers (static assets) → https://download.toolsbase.org/ (site.config.json `url`)
+# Each copy is self-canonical: canonical tags, sitemap, robots.txt and OG URLs use its own address.
 
 on:
   push:
@@ -28,7 +29,7 @@ jobs:
           node-version: 22
       - run: node scripts/build.mjs
         env:
-          DEPLOY_URL: https://devr77.github.io/facebook-video-download
+          SITE_URL: https://devr77.github.io/facebook-video-download
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
